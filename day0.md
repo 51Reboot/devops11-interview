@@ -149,3 +149,62 @@ $ vagrant ssh-config
 $ vagrant box remove centos66-devops11
 ```
 
+## 7. 课后问题
+
+### 1. Django 参数
+
+```
+咨询个问题哈，django中settings设置中关于这两个参数USE_I18N = True
+、USE_L10N = True ，我知道他是代表一个是国际化，一个是本地化的意思，生产环境一般怎么设置呢？ 网上搜了一些看的不太明白
+```
+
+- USE_I18N
+
+```
+是否激活翻译功能，True 表示激活，False表示禁用
+如果为True本质上就是加了一个翻译的功能，对性能消耗不大。
+
+生产环境 建议为False
+
+参考：https://docs.djangoproject.com/zh-hans/3.1/topics/i18n/translation/#how-django-discovers-language-preference
+```
+
+- USE_L10N
+
+```
+如果为True，则Django会使用默认的日期和时间格式
+如果想自定义成标准的日期时间格式 比如 2021-03-08 20:00:00 ，那么就要设置值为False 并制定日期和时间格式 否则不生效
+DATE_FORMAT = 'Y-m-d'
+TIME_FORMAT = 'H:i:s'
+
+生产环境 建议为False 并制定日期和时间格式
+```
+
+[官方文档](https://docs.djangoproject.com/en/3.1/topics/i18n/)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
